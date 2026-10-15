@@ -1,0 +1,42 @@
+[
+    {
+      "name": "Plomería",
+      "slug": "plomeria",
+      "description": "Instalación, mantenimiento y reparación de sistemas de agua y tuberías."
+    },
+    {
+      "name": "Electricidad",
+      "slug": "electricidad",
+      "description": "Instalaciones eléctricas, mantenimiento y reparación de fallas."
+    },
+    {
+      "name": "Limpieza",
+      "slug": "limpieza",
+      "description": "Servicios de limpieza para hogares, oficinas y espacios comerciales."
+    },
+    {
+      "name": "Jardinería",
+      "slug": "jardineria",
+      "description": "Mantenimiento de jardines, poda y cuidado de plantas."
+    },
+    {
+      "name": "Aire acondicionado",
+      "slug": "aire-acondicionado",
+      "description": "Instalación, reparación y mantenimiento de equipos de climatización."
+    },
+    {
+      "name": "Cerrajería",
+      "slug": "cerrajeria",
+      "description": "Apertura de puertas, reparación de cerraduras y cambio de llaves."
+    },
+    {
+      "name": "Pintura",
+      "slug": "pintura",
+      "description": "Pintura interior y exterior para viviendas y locales comerciales."
+    },
+    {
+      "name": "Reparaciones del hogar",
+      "slug": "reparaciones-del-hogar",
+      "description": "Reparaciones generales y mantenimiento doméstico."
+    }
+]

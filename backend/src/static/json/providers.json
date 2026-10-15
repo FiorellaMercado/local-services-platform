@@ -1,0 +1,92 @@
+[
+    {
+      "name": "Carlos Benítez",
+      "phone": "0981123401",
+      "description": "Plomero con experiencia en reparación de cañerías, grifos, sanitarios y fugas de agua.",
+      "categorySlug": "plomeria"
+    },
+    {
+      "name": "Miguel Rojas",
+      "phone": "0982123402",
+      "description": "Realiza instalaciones sanitarias, destapaciones y mantenimiento de sistemas de agua.",
+      "categorySlug": "plomeria"
+    },
+    {
+      "name": "ElectroSoluciones de Andrés",
+      "phone": "0983123403",
+      "description": "Electricista domiciliario especializado en instalación de luminarias, tomacorrientes y diagnóstico de fallas.",
+      "categorySlug": "electricidad"
+    },
+    {
+      "name": "Luis Fernández",
+      "phone": "0984123404",
+      "description": "Ofrece mantenimiento de tableros eléctricos, cableado e instalaciones para viviendas.",
+      "categorySlug": "electricidad"
+    },
+    {
+      "name": "Brillo Hogar",
+      "phone": "0985123405",
+      "description": "Servicio de limpieza profunda de casas, departamentos y espacios después de mudanzas.",
+      "categorySlug": "limpieza"
+    },
+    {
+      "name": "Limpio y Listo",
+      "phone": "0986123406",
+      "description": "Limpieza periódica de oficinas, cocinas, baños y espacios comerciales.",
+      "categorySlug": "limpieza"
+    },
+    {
+      "name": "Jardines de Diego",
+      "phone": "0987123407",
+      "description": "Mantenimiento de jardines, corte de césped, poda y preparación de canteros.",
+      "categorySlug": "jardineria"
+    },
+    {
+      "name": "Verde Urbano",
+      "phone": "0988123408",
+      "description": "Diseño y mantenimiento de jardines pequeños, patios y terrazas.",
+      "categorySlug": "jardineria"
+    },
+    {
+      "name": "ClimaPro Paraguay",
+      "phone": "0989123409",
+      "description": "Instalación, limpieza y mantenimiento preventivo de acondicionadores de aire.",
+      "categorySlug": "aire-acondicionado"
+    },
+    {
+      "name": "Frío Express de Javier",
+      "phone": "0981123410",
+      "description": "Diagnóstico de fallas, reparación y mantenimiento de equipos de climatización domésticos.",
+      "categorySlug": "aire-acondicionado"
+    },
+    {
+      "name": "Cerrajería Central",
+      "phone": "0982123411",
+      "description": "Apertura de puertas, cambio de cerraduras e instalación de sistemas de seguridad básicos.",
+      "categorySlug": "cerrajeria"
+    },
+    {
+      "name": "Pinturas de Marcos",
+      "phone": "0983123412",
+      "description": "Pintura interior y exterior, preparación de paredes y renovación de ambientes.",
+      "categorySlug": "pintura"
+    },
+    {
+      "name": "Color y Hogar",
+      "phone": "0984123413",
+      "description": "Pintura de viviendas y pequeños comercios, con asesoramiento para elegir colores.",
+      "categorySlug": "pintura"
+    },
+    {
+      "name": "Soluciones para tu Casa",
+      "phone": "0985123414",
+      "description": "Reparaciones domésticas menores, montaje de estantes y ajuste de puertas y muebles.",
+      "categorySlug": "reparaciones-del-hogar"
+    },
+    {
+      "name": "Manos a la Obra de Roberto",
+      "phone": "0986123415",
+      "description": "Mantenimiento general del hogar, pequeñas reparaciones y montaje de mobiliario.",
+      "categorySlug": "reparaciones-del-hogar"
+    }
+]
