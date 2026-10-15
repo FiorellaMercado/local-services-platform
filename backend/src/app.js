@@ -2,6 +2,7 @@ const express= require('express');
 const cors= require('cors')
 require('dotenv').config();
 
+const {connectDB} = require('./config/db')
 const app = express()
 
 app.use(cors());
@@ -14,8 +15,12 @@ app.get('/health', (req,res)=>{
 })
 
 const PORT=process.env.PORT || 3000;
-app.listen(PORT, ()=>{
-    console.log(`Servidor en http://localhost:${PORT}`)
+
+connectDB().then(()=>{
+    app.listen(PORT, ()=>{
+        console.log(`Servidor en http://localhost:${PORT}`)
+    })
 })
+
 
 
