@@ -20,9 +20,6 @@ app.get('/health', (req,res)=>{
 app.use('/proveedores',providerRoutes)
 app.use('/categorias', categoryRoutes)
 
-app.get('/boom', (req, res) => {
-    throw new Error('prueba')
-})
 
 app.use((req,res)=>{
     res.status(404).json({error: "Pagina no encontrada"})
