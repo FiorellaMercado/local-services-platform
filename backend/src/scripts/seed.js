@@ -3,6 +3,17 @@ const {prisma} = require('../config/db')
 const fs = require('fs/promises')
 const path = require('path')
 
+const dbHost = new URL(process.env.DATABASE_URL).hostname;
+const isLocal = ['localhost', '127.0.0.1'].includes(dbHost);
+
+
+if (!isLocal && !process.argv.includes('--force')) {
+    throw new Error(
+        `El seed borrara TODOS los datos y la base es remota (${dbHost}). ` +
+        `Si quieres borrarlos ejecuta: npm run seed -- --force`
+    );
+}
+
 
 async function create_initial_data() {
 
