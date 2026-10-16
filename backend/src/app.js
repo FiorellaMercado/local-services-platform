@@ -7,6 +7,7 @@ const app = express()
 
 const providerRoutes = require('./routes/providerRoutes')
 const categoryRoutes = require('./routes/categoryRoutes')
+const reviewRoutes = require('./routes/reviewRoutes')
 
 app.use(cors());
 app.use(express.json());
@@ -19,6 +20,7 @@ app.get('/health', (req,res)=>{
 
 app.use('/proveedores',providerRoutes)
 app.use('/categorias', categoryRoutes)
+app.use('/proveedores/:id/resenas', reviewRoutes)
 
 
 app.use((req,res)=>{
