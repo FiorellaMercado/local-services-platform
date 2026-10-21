@@ -40,13 +40,13 @@ const createReview=async(req, res)=>{
 
     const proveedor = await prisma.provider.findUnique({where : { id: id}})
     if (!proveedor){
-        return res.status(200).json([])
+        return res.status(404).json({error: "Proveedor no encontrado"})
     }
 
     
    
     const proveedorActualizado = await prisma.$transaction(async(tx)=>{
-        const resena= await tx.review.create({data:{rating:rating, author: author, comment: comment, providerId: proveedor.id}})
+        const resena= await tx.review.create({data:{rating:rating, author: author, comment: comment || null, providerId: proveedor.id}})
 
         const promedio= await tx.review.aggregate({where:{providerId:proveedor.id},_avg:{rating:true}})
         const cuenta= await tx.review.aggregate({where:{providerId:proveedor.id},_count:{rating:true}})
