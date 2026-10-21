@@ -18,6 +18,8 @@ async function getProvider(providerId) {
         dibujarElemento('category', proveedor.category.name)
 
         dibujarElemento('phone', proveedor.phone)
+        const telefono = document.getElementById('phone')
+        telefono.href = `tel:${proveedor.phone}`
 
         if (proveedor.average === null){
             dibujarElemento('rating', 'Sin resenas')
