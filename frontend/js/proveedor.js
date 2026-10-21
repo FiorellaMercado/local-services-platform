@@ -71,7 +71,12 @@ async function getProvider(providerId) {
 
             }
         }
-          
+        const seccionInfo = document.getElementById('info-section')
+        const seccionForm = document.getElementById('form-section')
+        const seccionReview= document.getElementById('review-section')
+        seccionInfo.hidden= false
+        seccionForm.hidden = false
+        seccionReview.hidden= false
     }catch(error){
         mostrarMensaje(mensaje,'No se pudo cargar los datos del proveedor')
         console.error(error)

@@ -7,10 +7,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="js/proveedores.js"></script>
 </head>
-<body class="min-h-screen py-6 px-10 max-w-7xl mx-auto">
-    <h1 class="text-3xl font-bold mb-6">Proveedores</h1>
-    <p id="ui-state"></p>
-    <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+<body class="min-h-screen flex flex-col">
+    <nav class="flex bg-black p-4 gap-2 px-10">
+        <a  href="index.html" class="text-white">Inicio</a>
+        <a class="text-white"  aria-current="page">Proveedores</a>
+    </nav>
+    <main class="min-h-screen py-6 px-10 max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">Proveedores</h1>
+        <p class="text-2xl" id="ui-state"></p>
+        <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4">
+        <p class="text-sm text-gray-400 text-center">Proveedores de servicios locales</p>
+    </footer>
     
 </body>
 </html>

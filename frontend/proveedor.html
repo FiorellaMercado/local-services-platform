@@ -7,10 +7,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="js/proveedor.js"></script>
 </head>
-<body class="min-h-screen py-6 px-10 max-w-7xl mx-auto">
-    <main>
-        <section class="bg-gray-100 p-6 rounded-xl mb-5">
-            <p id="ui-state"></p>
+<body class="min-h-screen flex flex-col" >
+
+    <nav class="flex bg-black p-4 gap-2 px-10">
+        <a  href="index.html" class="text-white">Inicio</a>
+        <a href="proveedores.html" class="text-white" >Proveedores</a>
+    </nav>
+
+    <main class="min-h-screen py-6 px-6 max-w-7xl mx-auto">
+        <p class="text-2xl" id="ui-state"></p>
+        <section hidden id="info-section" class="bg-gray-100 p-6 rounded-xl mb-5">
             <h1 id="name" class="text-3xl font-bold mb-3"></h1>
             <p id="category"></p>
             <p class="text-sm text-gray-500 hover:underline" id="phone"></p>
@@ -20,12 +26,12 @@
             
         </section>
         
-        <section class=" p-6 rounded-xl mb-10">
+        <section id="review-section" hidden class=" p-6 rounded-xl mb-10">
             <h2 class="text-2xl font-bold text-gray-800 mb-5">Reseñas</h2>
             <div id="reviews" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
         </section>
 
-        <section class="bg-gray-100 p-6 rounded-xl mb-10 w-full max-w-sm mx-auto">
+        <section hidden id="form-section" class="bg-gray-100 p-6 rounded-xl mb-10 w-full max-w-sm mx-auto">
             <form id="review-form" class="flex flex-col gap-5 ">
                 <h2 class="text-2xl font-bold mb-6">Deja tu resena</h2>
                 <div class="flex flex-col gap-2">
@@ -49,5 +55,8 @@
             <p id="review-message"></p>
     </section>
     </main>
+    <footer class="bg-gray-800 text-white p-4">
+        <p class="text-sm text-gray-400 text-center">Proveedores de servicios locales</p>
+    </footer>
 </body>
 </html>
