@@ -15,5 +15,23 @@
     <span id="reviews-count"></span>
     <p id="description"></p>
     <div id="reviews"></div>
+
+    <h2>Deja tu resena</h2>
+    <form id="review-form">
+        <div>
+            <label for="form-author">Nombre:</label>
+            <input type="text" name="autor" id="form-author" minlength="2" maxlength="60" required>
+        </div>
+        <div>
+            <label for="form-rating">Calificacion</label>
+            <input type="number" name="rating" id="form-rating" min="1" max="5" step="1" required>
+        </div>
+        <div>
+            <label for="form-comment">Comentario</label>
+            <input type="text" name="comment" id="form-comment" maxlength="200">
+        </div>
+        <button id="review-button" type="submit">Enviar</button>
+    </form>
+    <p id="review-message"></p>
 </body>
 </html>

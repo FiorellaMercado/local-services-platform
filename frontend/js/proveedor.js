@@ -1,12 +1,13 @@
-import { apiFetch } from "./api.js";
+import { apiFetch, apiPOST} from "./api.js";
 import { crearElemento, dibujarElemento, formatearFecha, mostrarMensaje } from "./ui.js";
 
-async function getProvider() {
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id')
+async function getProvider(providerId) {
     const mensaje = document.getElementById('ui-state')
     mostrarMensaje(mensaje,'Cargando...')
 
-    const params = new URLSearchParams(window.location.search);
-    const providerId = params.get('id')
+    
 
 
     try{
@@ -34,6 +35,7 @@ async function getProvider() {
         dibujarElemento('description', proveedor.description)
 
         const reviews = document.getElementById('reviews')
+        reviews.replaceChildren();
 
         if (proveedor.reviews.length === 0){
             const reviewMensaje= document.createElement('p')
@@ -72,4 +74,42 @@ async function getProvider() {
     }
 }
 
-getProvider()
+async function iniciarFormulario(providerId) {
+    const formulario = document.getElementById('review-form')
+    const mensaje = document.getElementById('review-message')
+
+    const autor=document.getElementById('form-author')
+    const rating=document.getElementById('form-rating')
+    const comentario=document.getElementById('form-comment')
+
+    formulario.addEventListener('submit', async (event)=>{
+        event.preventDefault()
+
+        mostrarMensaje(mensaje, 'Enviando...')
+        const boton = document.getElementById('review-button')
+        boton.disabled= true;
+        const datos = {
+            author: autor.value,
+            rating: Number(rating.value),
+            comment: comentario.value
+        }
+        console.log(datos)
+        try{
+            await apiPOST(`proveedores/${providerId}/resenas`, datos)
+            mostrarMensaje(mensaje, 'Reseña enviada correctamente')
+            setTimeout(() => {
+                mostrarMensaje(mensaje, '');
+            }, 2000);
+            formulario.reset();
+            await getProvider(providerId);
+        }catch(error){
+            mostrarMensaje(mensaje, 'No se pudo enviar su resena')
+            console.error(error)
+        }finally{
+            boton.disabled = false;
+        }
+    })
+    
+}
+getProvider(id)
+iniciarFormulario(id)
