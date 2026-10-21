@@ -1,19 +1,14 @@
 import { apiFetch, apiPOST} from "./api.js";
-import { crearElemento, dibujarElemento, formatearFecha, mostrarMensaje } from "./ui.js";
+import { crearElemento, dibujarElemento, dibujarEstrellas, formatearFecha, mostrarMensaje } from "./ui.js";
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id')
+
 async function getProvider(providerId) {
     const mensaje = document.getElementById('ui-state')
     mostrarMensaje(mensaje,'Cargando...')
 
-    
-
-
     try{
-        if (!Number.isInteger(Number(providerId)) || Number(providerId)< 1 ){
-            throw new Error('ID invalido')
-        }
 
         const proveedor= await  apiFetch(`proveedores/${providerId}`)
         mostrarMensaje(mensaje,'' )
@@ -27,10 +22,11 @@ async function getProvider(providerId) {
         if (proveedor.average === null){
             dibujarElemento('rating', 'Sin resenas')
         }else{
-            dibujarElemento('rating', proveedor.average)
+            dibujarElemento('rating', `Calificacion: ${proveedor.average}`) 
+            dibujarElemento('reviews-count', `| ${proveedor.reviewsCount} resena/s`)
+
         }
 
-        dibujarElemento('reviews-count', proveedor.reviewsCount)
 
         dibujarElemento('description', proveedor.description)
 
@@ -46,11 +42,16 @@ async function getProvider(providerId) {
         }else{
             for (const review of proveedor.reviews){
 
+                const separador = document.createElement('div')
+                separador.className='bg-gray-100 p-6 rounded-xl'
+
                 const autor = crearElemento('p',review.author)
+                autor.className='font-bold '
 
                 const fecha = crearElemento('p',formatearFecha(review.createdAt))
+                fecha.className='text-sm text-gray-400'
 
-                const calificacion = crearElemento('span',review.rating)
+                const calificacion = crearElemento('span',dibujarEstrellas(review.rating))
 
                 
                 const comentario = document.createElement('p')
@@ -60,10 +61,13 @@ async function getProvider(providerId) {
                     comentario.textContent=review.comment
                 }
 
-                reviews.appendChild(autor)
-                reviews.appendChild(fecha)
-                reviews.appendChild(calificacion)
-                reviews.appendChild(comentario)
+                separador.appendChild(autor)
+                separador.appendChild(fecha)
+                separador.appendChild(calificacion)
+                separador.appendChild(comentario)
+                
+
+                reviews.appendChild(separador)
 
             }
         }
@@ -74,7 +78,7 @@ async function getProvider(providerId) {
     }
 }
 
-async function iniciarFormulario(providerId) {
+function iniciarFormulario(providerId) {
     const formulario = document.getElementById('review-form')
     const mensaje = document.getElementById('review-message')
 
@@ -93,7 +97,7 @@ async function iniciarFormulario(providerId) {
             rating: Number(rating.value),
             comment: comentario.value
         }
-        console.log(datos)
+
         try{
             await apiPOST(`proveedores/${providerId}/resenas`, datos)
             mostrarMensaje(mensaje, 'Reseña enviada correctamente')
@@ -111,5 +115,20 @@ async function iniciarFormulario(providerId) {
     })
     
 }
-getProvider(id)
-iniciarFormulario(id)
+
+function idValido(id){
+    if (!Number.isInteger(Number(id)) || Number(id)< 1 ){
+            const formulario = document.getElementById('review-form')
+            formulario.hidden=true
+            const mensaje = document.getElementById('ui-state')
+            mostrarMensaje(mensaje,'ID invalido')
+            throw new Error('ID invalido')
+    }
+    return true
+}
+
+if (idValido(id)){
+    getProvider(id)
+    iniciarFormulario(id)
+}
+

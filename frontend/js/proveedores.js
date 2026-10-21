@@ -9,7 +9,6 @@ async function getProviders() {
 
     try{
         const proveedores=await apiFetch('proveedores')
-        console.log(proveedores)
         if(proveedores.length === 0){
             mostrarMensaje(mensaje,'Sin resultados');
         }else{
