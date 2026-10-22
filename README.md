@@ -23,5 +23,13 @@
 
 ### Después
 
-![Lighthouse después](docs/lighthouse/antes-proveedores.png)
+![Lighthouse después](docs/lighthouse/despues-proveedores.png)
 
+
+## Despliegue
+
+### Backend:
+https://local-services-platform.onrender.com/
+
+### frontend:
+https://heartfelt-sundae-626e46.netlify.app/
