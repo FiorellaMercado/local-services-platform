@@ -25,7 +25,7 @@ export function crearTarjeta(proveedor){
     nombre.className='font-bold '
 
     const categoria = crearElemento('span',proveedor.category.name)
-    categoria.className='text-sm text-gray-400'
+    categoria.className='text-sm text-gray-600'
 
     let contenido
     if (proveedor.average === null){

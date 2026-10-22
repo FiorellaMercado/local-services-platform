@@ -51,7 +51,7 @@ async function getProvider(providerId) {
                 autor.className='font-bold '
 
                 const fecha = crearElemento('p',formatearFecha(review.createdAt))
-                fecha.className='text-sm text-gray-400'
+                fecha.className='text-sm text-gray-600'
 
                 const calificacion = crearElemento('span',dibujarEstrellas(review.rating))
 
