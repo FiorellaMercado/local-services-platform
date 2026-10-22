@@ -15,6 +15,7 @@ El proyecto consta de dos partes:
 - css
 - js
 
+## Reporte Lighthouse
 
 ## Resumen del “antes” (móvil, Slow 4G)
 
