@@ -9,7 +9,7 @@ const providerRoutes = require('./routes/providerRoutes')
 const categoryRoutes = require('./routes/categoryRoutes')
 const reviewRoutes = require('./routes/reviewRoutes')
 
-app.use(cors());
+app.use(cors()); // para que no se bloque en por tener puertos distintos
 app.use(express.json());
 
 
@@ -26,7 +26,7 @@ app.use('/proveedores/:id/resenas', reviewRoutes)
 app.use((req,res)=>{
     res.status(404).json({error: "Pagina no encontrada"})
 })
-
+//manejo de errores
 app.use((err, req, res, next) => {
     console.error(err)
     res.status(500).json({ error: "Error interno del servidor" })

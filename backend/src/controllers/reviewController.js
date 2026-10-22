@@ -1,6 +1,6 @@
 const {prisma} = require('../config/db')
 
-
+//validaciones para evitar listas o datos sobre los cuales no se puede trabajar
 function esValido (rating, author, comment){
     if(!rating || typeof rating !== "number" || !Number.isInteger(rating) || rating > 5 || rating <1){
         return false
@@ -22,29 +22,30 @@ const createReview=async(req, res)=>{
     const rating = req.body['rating'] 
     let author =req.body['author']
     let comment =req.body['comment'] || ""
-
+    //validacion sobre el id que viene en el url
     if(!id || typeof id !== "number" || !Number.isInteger(id)){
         return res.status(400).json({error: "Id invalido"})
     }
 
+    //recortar espacios vacios
     if(typeof author == "string"){
         author=author.trim()
     }
     if(typeof comment == "string"){
         comment=comment.trim()
     }
-
+    //llamar a la funcion
     if(!esValido(rating, author, comment)){
         return res.status(400).json({error:"Resena invalida"})
     }
-
+    //consulta buscamos el proveedor
     const proveedor = await prisma.provider.findUnique({where : { id: id}})
     if (!proveedor){
         return res.status(404).json({error: "Proveedor no encontrado"})
     }
 
     
-   
+   //actualizar el provedor promedio y reviewcount, agregamos el review y actualizamos los campos a proveedor
     const proveedorActualizado = await prisma.$transaction(async(tx)=>{
         const resena= await tx.review.create({data:{rating:rating, author: author, comment: comment || null, providerId: proveedor.id}})
 
