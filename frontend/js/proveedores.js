@@ -9,6 +9,7 @@ async function getProviders() {
 
     try{
         const proveedores=await apiFetch('proveedores')
+        lista.replaceChildren;
         if(proveedores.length === 0){
             mostrarMensaje(mensaje,'Sin resultados');
         }else{

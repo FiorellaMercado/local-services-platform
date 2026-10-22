@@ -22,10 +22,10 @@ async function getProvider(providerId) {
         telefono.href = `tel:${proveedor.phone}`
 
         if (proveedor.average === null){
-            dibujarElemento('rating', 'Sin resenas')
+            dibujarElemento('rating', 'Sin reseñas')
         }else{
             dibujarElemento('rating', `Calificacion: ${proveedor.average}`) 
-            dibujarElemento('reviews-count', `| ${proveedor.reviewsCount} resena/s`)
+            dibujarElemento('reviews-count', `| ${proveedor.reviewsCount} reseña/s`)
 
         }
 
@@ -114,7 +114,7 @@ function iniciarFormulario(providerId) {
             formulario.reset();
             await getProvider(providerId);
         }catch(error){
-            mostrarMensaje(mensaje, 'No se pudo enviar su resena')
+            mostrarMensaje(mensaje, 'No se pudo enviar su reseña')
             console.error(error)
         }finally{
             boton.disabled = false;

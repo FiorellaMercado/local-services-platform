@@ -29,7 +29,7 @@ export function crearTarjeta(proveedor){
 
     let contenido
     if (proveedor.average === null){
-        contenido='Sin resenas'
+        contenido='Sin reseñas'
     }else{
         contenido=proveedor.average.toFixed(1)
     }
