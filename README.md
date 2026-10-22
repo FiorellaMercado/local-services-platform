@@ -19,11 +19,11 @@
 
 ### Antes
 
-![Lighthouse antes](docs/lighthouse/antes-proveedores.png)
+![Lighthouse antes](docs/lighthouse/antes_proveedores.png)
 
 ### Después
 
-![Lighthouse después](docs/lighthouse/despues-proveedores.png)
+![Lighthouse después](docs/lighthouse/despues_proveedores.png)
 
 
 ## Despliegue
