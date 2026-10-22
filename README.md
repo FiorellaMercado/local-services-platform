@@ -1,6 +1,20 @@
 # Proveedores de servicios locales
 
-Proyecto de página web que perite ver proveedores de servicios locales y reseñarlos, así como ver las reseñas de otros clientes
+Proyecto de página web que permite ver proveedores de servicios locales y reseñarlos, así como ver las reseñas de otros clientes.
+
+El proyecto consta de dos partes:
+- El backend que se encuentra desplegado en render
+- El frontend que se encuentra en netlify
+
+## Herramientas
+- Node.js
+- Express
+- postgres
+- prisma
+- html
+- css
+- js
+
 
 ## Resumen del “antes” (móvil, Slow 4G)
 
