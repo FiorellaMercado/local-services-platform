@@ -17,11 +17,11 @@ El proyecto consta de dos partes:
 
 ## Reporte Lighthouse
 
-## Resumen del “antes” (móvil, Slow 4G)
+### Resumen del “antes” (móvil, Slow 4G)
 
 ![Lighthouse después](docs/lighthouse/reporte_antes.png)
 
-## Reporte “después” (móvil, Slow 4G) - Comparativa
+###  Reporte “después” (móvil, Slow 4G) - Comparativa
 
 ![Lighthouse antes-después](docs/lighthouse/reporte.png)
 
