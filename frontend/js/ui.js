@@ -38,6 +38,7 @@ export function crearTarjeta(proveedor){
     const detalle = crearElemento('a','Ver mas')
     detalle.href=`proveedor.html?id=${proveedor.id}`
     detalle.className = 'text-blue-600 underline hover:text-blue-800'
+    detalle.setAttribute('aria-label', `Ver detalle de ${proveedor.name}`)
 
     tarjeta.appendChild(nombre);
     tarjeta.appendChild(categoria);
