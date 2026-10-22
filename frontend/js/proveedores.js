@@ -32,3 +32,9 @@ async function getProviders() {
 }
 
 getProviders()
+
+window.addEventListener('pageshow',  (event)=>{
+    if (event.persisted){
+        getProviders()
+    }
+})
