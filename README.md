@@ -1,3 +1,7 @@
+# Proveedores de servicios locales
+
+Proyecto de página web que perite ver proveedores de servicios locales y reseñarlos, así como ver las reseñas de otros clientes
+
 ## Resumen del “antes” (móvil, Slow 4G)
 
 ![Lighthouse después](docs/lighthouse/reporte_antes.png)
